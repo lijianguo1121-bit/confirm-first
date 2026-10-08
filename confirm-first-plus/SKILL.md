@@ -1,6 +1,6 @@
 ---
 name: confirm-first-plus
-description: TEST VERSION — pre-execution confirmation gate with automatic GitHub tool matching. Use when the user invokes "/确认+", "/confirm+", "confirm first plus", "先问我再匹配工具", or wants Kimi to (1) present a tick-able checklist of scenarios/sub-tasks before executing, and (2) for each confirmed item, automatically search GitHub for the strongest matching open-source tool, agent skill, or MCP server, then execute with it after a quick confirmation. Prevents unwanted automatic work and upgrades execution with best-in-class community tools.
+description: TEST VERSION — pre-execution confirmation gate with automatic GitHub tool matching. Use when the user invokes "/确认+", "/confirm+", "confirm first plus", "先问我再匹配工具", or wants Kimi to (1) present a tick-able checklist of scenarios/sub-tasks before executing, and (2) for each confirmed item, automatically search GitHub for the strongest matching open-source tool, agent skill, or MCP server, then execute with it after a quick confirmation. Web development items must be matched with proven UI/animation/icon stacks from GitHub, with UI aesthetics and an interaction checklist as mandatory acceptance criteria. Prevents unwanted automatic work and upgrades execution with best-in-class community tools.
 ---
 
 # Confirm First Plus (test)
@@ -26,6 +26,8 @@ For each confirmed item, in order of preference:
    - Score candidates: stars, last commit within ~12 months, README quality, installability in this environment (npm/pip/brew CLI, MCP plugin, or pure-prompt skill).
 3. Pick ONE best match per item. If nothing scores well, mark the item **built-in** and plan to execute with native capabilities.
 
+**Web development items** (网页/webapp/UI): read `references/web-dev.md` and follow its playbook — compose a proven UI stack from GitHub (components + animation + icons), and treat UI aesthetics and the interaction checklist as mandatory acceptance criteria, not optional polish.
+
 ## Phase 3 — Confirm the tool mapping (keep it short)
 
 ```
@@ -41,6 +43,7 @@ Default gate: wait for confirmation. Skip the wait only if the user has said "�
 - Prefer installed tools; ask before installing anything new.
 - Never run a tool the user rejected; never smuggle unconfirmed steps into an item.
 - After each item, verify the output exists/works before moving on.
+- **Web items**: before reporting done, walk the UI quality bar and interaction checklist in `references/web-dev.md` and fix any failures.
 - If a tool fails mid-run, fall back to the runner-up candidate or built-in capability, and say so.
 - Final report: results per item, skipped items, and the tool used per item (so the user can reuse the mapping).
 
