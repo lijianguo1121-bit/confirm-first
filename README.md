@@ -45,11 +45,19 @@ An AI agent skill that adds a pre-execution confirmation gate: give a simple com
 
 这就是一个标准的 `SKILL.md`（YAML frontmatter + Markdown 指令），兼容任何支持 skills 的 agent 运行时（Kimi Code、Claude Code 等），把 `SKILL.md` 放进对应的 skills 目录即可。
 
+## 测试版：confirm-first-plus 🧪
+
+`confirm-first-plus/` 是增强测试版：在确认清单之后，自动为每个事项**在 GitHub 上匹配最强的开源工具 / skill / MCP 服务**（优先本地已装、其次高星活跃项目），给出「事项 → 工具」的映射方案，你确认后才执行。
+
+- 触发：`/确认+` 或 `/confirm+`
+- 流程：确认清单 → 匹配工具 → 确认映射 → 执行并验证
+- 规则：星数和活跃度只报实际搜到的结果；你拒绝的工具绝不使用；安装任何新工具前必先询问
+
 ## 设计原则 | Design principles
 
 - **清单即边界**：被跳过的事项绝不执行，连"顺手帮忙"也不行
 - **随时可打断**：执行中发现新的必要步骤，会停下来再次确认
-- **零依赖**：纯文本交互，不需要任何插件或小组件，任何对话环境都能用
+- **零依赖**：基础版纯文本交互，不需要任何插件或小组件，任何对话环境都能用；plus 版只需要一个 GitHub 搜索入口
 
 ## License
 
