@@ -35,7 +35,7 @@ An AI agent skill that adds a pre-execution confirmation gate: give a simple com
 
 ### Kimi Work
 
-下载 [confirm-first.skill](dist/confirm-first.skill) 并导入，或把 `SKILL.md` 放到你的 skills 目录：
+从 [Releases](../../releases) 下载 `confirm-first.skill` 并导入，或直接把这个仓库里的 `SKILL.md` 放到你的 skills 目录：
 
 ```
 ~/.config/agents/skills/confirm-first/SKILL.md
